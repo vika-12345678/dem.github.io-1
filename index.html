@@ -34,4 +34,160 @@
       margin: 20px auto;
       border-radius: 8px;
     }
-    .cell
+    .cell {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      font-weight: bold;
+      font-size: 18px;
+      color: #1a1a1a;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .cell.black {
+      background: #2e7d32;
+    }
+    .cell.number::before {
+      content: attr(data-num);
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      font-size: 10px;
+      color: #c62828;
+      font-weight: bold;
+    }
+    .definitions {
+      text-align: left;
+      margin-top: 25px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+    .definitions h2 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+    .defs-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .defs-list { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(8, 32px); }
+      .cell { width: 32px; height: 32px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎄 New Year Crossword</h1>
+    <p>Fill in the festive words!</p>
+
+    <!-- 8×8 Grid -->
+    <div class="grid">
+      <!-- Row 0 -->
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <!-- Row 1 -->
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell number" data-num="1">T</div>
+      <div class="cell">R</div>
+      <div class="cell">E</div>
+      <div class="cell">E</div>
+
+      <!-- Row 2 -->
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell number" data-num="2">S</div>
+      <div class="cell">N</div>
+      <div class="cell">O</div>
+      <div class="cell">W</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <!-- Row 3 -->
+      <div class="cell black"></div>
+      <div class="cell number" data-num="3">G</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell">E</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <!-- Row 4 -->
+      <div class="cell">S</div>
+      <div class="cell">T</div>
+      <div class="cell">A</div>
+      <div class="cell">R</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <!-- Row 5 -->
+      <div class="cell black"></div>
+      <div class="cell">I</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <!-- Row 6 -->
+      <div class="cell black"></div>
+      <div class="cell">F</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+
+      <!-- Row 7 -->
+      <div class="cell number" data-num="4">J</div>
+      <div class="cell">O</div>
+      <div class="cell">Y</div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+      <div class="cell black"></div>
+    </div>
+
+    <div class="definitions">
+      <h2>📝 Clues</h2>
+      <div class="defs-list">
+        <div><strong>Across:</strong>
+          <br>1. Evergreen holiday decoration (4) → <em>TREE</em><br>
+          2. White flakes falling in winter (4) → <em>SNOW</em>
+        </div>
+        <div><strong>Down:</strong>
+          <br>1. Present under the tree (4) → <em>GIFT</em><br>
+          3. Shiny ornament on top of the tree (4) → <em>STAR</em><br>
+          4. Feeling of great happiness (3) → <em>JOY</em>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 30px; font-size: 0.9em; color: #ccc;">
+      ✨ Happy New Year! May your code compile and your tests pass!
+    </p>
+  </div>
+</body>
+</html>
